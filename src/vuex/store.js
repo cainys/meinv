@@ -13,6 +13,9 @@ const state = {
 const mutations = {
     UPDATE_MENUSHOW (state) {
         state.menuShow = !state.menuShow
+    },
+    UPDATE_LOADING (state, data) {
+        state.loadingShow = data
     }
 }
 const actions = {

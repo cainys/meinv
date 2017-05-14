@@ -1,12 +1,18 @@
 <template>
   <div id="app">
+    <v-header></v-header>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import vMenu from './components/menu/menu.vue'
+import vHeader from './components/header/header.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    vMenu, vHeader
+  }
 }
 </script>
 
@@ -20,6 +26,7 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding-top: 50px;
 
 }
 </style>
