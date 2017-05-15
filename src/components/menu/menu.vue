@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="menu-ul">
-                <div v-for="menu in menus">
+                <div v-for="menu in menus"  @click="updateHeader(menu)">
                     <router-link :to="menu" class="icon-quanbu iconfont item">
                         <div class="menu-icon">
                             <i class="iconfont" :class="'icon-'+menu"></i>
@@ -33,14 +33,26 @@ export default{
             type: Boolean
         }
     },
+    mounted () {
+
+    },
     data () {
         return {
             MENU_CONVERT: MENU_CONVERT
         }
     },
+    methods: {
+        updateHeader (menu) {
+            this.$store.commit('UPDATE_HEADER', this.MENU_CONVERT[menu])
+            this.$store.dispatch('updateMenuShow')
+            if (menu === 'day') {
+                this.$store.commit('UPDATE_NEWS', 0)
+            }
+        }
+    },
     computed: {
         ...mapState([
-            'menus', 'news'
+            'menus', 'news', 'headerTitle'
         ])
     }
 }

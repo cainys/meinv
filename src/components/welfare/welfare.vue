@@ -10,14 +10,14 @@
         <v-img :imgUrl="data.url"></v-img>
       </figure>
     </div>
-    <!--<v-details ref="details" :time="time" :detailsData="detailsData"></v-details>-->
+    <v-details ref="details" :time="time" :detailsData="detailsData"></v-details>
   </div>
 </template>
 
 <script>
   import { objectDate } from '../../common/js/date'
   import vImg from '../lazyloadimg/lazyimg.vue'
-//   import vDetails from '../details/details.vue';
+  import vDetails from '../details/details.vue'
   export default {
     data () {
       return {
@@ -30,7 +30,7 @@
       }
     },
     components: {
-      vImg
+      vImg, vDetails
     },
     created () {
     },

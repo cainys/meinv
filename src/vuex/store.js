@@ -16,6 +16,12 @@ const mutations = {
     },
     UPDATE_LOADING (state, data) {
         state.loadingShow = data
+    },
+    UPDATE_HEADER (state, title) {
+        state.headerTitle = title
+    },
+    UPDATE_NEWS (state, num) {
+        state.news = num
     }
 }
 const actions = {
