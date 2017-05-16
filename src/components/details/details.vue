@@ -40,9 +40,16 @@ export default{
     methods: {
         show () {
             this.showFlag = true
-            this.$nextTick(() => {
-                this.$refs.day.clearStyle()
-            })
+                this.$nextTick(() => {
+                    if (!this.scroll) {
+                        this.scroll = new BScroll(this.$el, {
+                            click: true
+                        })
+                    } else {
+                        this.scroll.refresh()
+                    }
+                    this.$refs.day.clearStyle()
+                })
         },
         hide () {
             this.showFlag = false

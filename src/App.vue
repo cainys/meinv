@@ -20,6 +20,10 @@ export default {
 body{
   margin: 0 !important;
 }
+a{
+  text-decoration: none;
+  color: #000;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
