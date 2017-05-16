@@ -66,7 +66,7 @@
         this.time = time
         this.$store.commit('UPDATE_LOADING', true)
         let object = objectDate(this.time)
-        this.$http.get(`http://gank.io/api/history/content/day/${object.Y}/${object.M}/${object.D}`).then((response) => {
+        this.$http.get(`//gank.io/api/history/content/day/${object.Y}/${object.M}/${object.D}`).then((response) => {
           let data = response.body.results
           this.detailsData = data[0]
           this.$refs.details.show()
